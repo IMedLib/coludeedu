@@ -1,0 +1,372 @@
+﻿<!--
+	作者：fmj074@163.com
+	时间：2015-12-20
+	描述：个人主页
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>医学云课程</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/course.css" rel="stylesheet">
+		<link href="css/home.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+	</head>
+
+	<body>
+
+		<!--
+        	作者：fmj074@163.com
+        	时间：2015-11-26
+        	描述：导航开始
+        -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">医学云课程</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<span class="glyphicon glyphicon-align-justify" data-toggle="tooltip" data-placement="bottom" title="展开菜单" id="show-left-menu"></span>
+					<img src="img/logo/logo我的主页-default.png" class="logo">
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<div class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="关键字">
+						</div>
+						<button class="btn btn-default"> <span class="glyphicon glyphicon-search" data-toggle="tooltip" data-placement="bottom" title="搜索课程"></span>
+						</button>
+						<button class="btn btn-default" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-plus" data-toggle="tooltip" data-placement="bottom" title="创建课程"></span>
+						</button>
+					</div>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">首页<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">搜索</a></li>
+								<li><a href="#">田家园</a></li>
+								<li><a href="#">35D人体</a></li>
+								<li><a href="#">在身边</a></li>
+							</ul>
+						</li>
+						<li class="top-info-li">
+							<a href="#">机构</a>
+						</li>
+						<li class="top-info-li">
+							<a href="#">专家</a>
+						</li>
+						<li class="top-info-li">
+							<a href="#">云板书</a>
+						</li>
+						<li class="top-info-li">
+							<a href="#">百科</a>
+						</li>
+						<li class="top-info-li-sm">
+							<span class="glyphicon glyphicon-user"></span>
+						</li>
+
+					</ul>
+
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!--
+	        	作者：fmj074@163.com
+	        	时间：2015-11-26
+	        	描述：导航结束
+	        -->
+			<div id="left-menu" >
+				<div class="left-title">我的资源公众号</div>
+				<ul>
+					<li> 云板书</li>
+					<li> 我建的课堂</li>
+					<li> 我建的MOOOMC课程</li>
+					<!--<li> 视频</li>
+					<li> 医学词条</li>
+					<li> 虚拟器官</li>
+					<li> 大体标本</li>
+					<li> 数字切片</li>
+					<li> 医学影像</li>-->
+
+				</ul>
+
+	
+				<div class="left-title">我的公众形象</div>
+
+				<ul>
+					<li> 在线认证</li>
+					<li> 我的公众首页</li>
+					<li> 开通会员卡</li>
+				</ul>
+
+				<div class="left-title">我的管理</div>
+				<ul>
+					<li> 我管理的机构</li>
+					<li> 我管理的个人公众首页？</li>
+					<li> 我管理的课程</li>
+					<li> 我管理的田家园</li>
+
+				</ul>
+
+				<div class="left-title">我的交易</div>
+				<ul>
+					<li> 我的健币</li>
+					<li> 会员特权</li>
+					<li> 产品上架</li>
+					<li> 购得产品</li>
+				</ul>
+				<div class="left-title">我的医学知识库</div>
+
+				<ul>
+					<li> 阅读历史</li>
+					<li> 订阅课程</li>
+					<li> 收藏资源</li>
+					<li> 我的学习课程</li>
+				</ul>
+				<div class="left-title">帐号管理</div>
+
+				<ul>
+					<li> 登录与安全</li>
+					<li> 个人信息</li>
+					<li> 帐号设置</li>
+				</ul>
+
+				<div class="left-title">个人健康管理</div>
+				<ul>
+					<li> 我的健康信息</li>
+					<li> ？？？的健康信息</li>
+					<li> ？？？的健康信息</li>
+				</ul>
+			</div>
+			<div class="container " id="course-list-div">
+				<!--
+                	作者：fmj074@163.com
+                	时间：2015-11-26
+                	描述：网络课程开始
+                -->
+				<div class="row">
+
+					<div class="col-md-3 col-sm-6">
+						<div class="thumbnails thumbnail-style thumbnail-kenburn">
+							<div class="thumbnail-img">
+								<div class="overflow-hidden">
+									<img class="img-responsive" src="img/img12.jpg" alt="">
+								</div>
+								<a class="btn-more hover-effect" href="classroom.html">学习 +</a>
+							</div>
+							<div class="caption">
+								<h3><a class="hover-effect" href="#">课程2</a></h3>
+								<p>课程简介:本课程是网络公开课</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="thumbnails thumbnail-style thumbnail-kenburn">
+							<div class="thumbnail-img">
+								<div class="overflow-hidden">
+									<img class="img-responsive" src="img/img12.jpg" alt="">
+								</div>
+								<a class="btn-more hover-effect" href="classroom.html">学习 +</a>
+							</div>
+							<div class="caption">
+								<h3><a class="hover-effect" href="#">课程2</a></h3>
+								<p>课程简介:本课程是网络公开课</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="thumbnails thumbnail-style thumbnail-kenburn">
+							<div class="thumbnail-img">
+								<div class="overflow-hidden">
+									<img class="img-responsive" src="img/img12.jpg" alt="">
+								</div>
+								<a class="btn-more hover-effect" href="classroom.html">学习 +</a>
+							</div>
+							<div class="caption">
+								<h3><a class="hover-effect" href="#">课程2</a></h3>
+								<p>课程简介:本课程是网络公开课</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="thumbnails thumbnail-style thumbnail-kenburn">
+							<div class="thumbnail-img">
+								<div class="overflow-hidden">
+									<img class="img-responsive" src="img/img12.jpg" alt="">
+								</div>
+								<a class="btn-more hover-effect" href="classroom.html">学习 +</a>
+							</div>
+							<div class="caption">
+								<h3><a class="hover-effect" href="#">课程2</a></h3>
+								<p>课程简介:本课程是网络公开课</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- End Recent Works -->
+				<!--
+                	作者：fmj074@163.com
+                	时间：2015-11-26
+                	描述：网络课程结束
+                -->
+
+			</div>
+
+			<!--
+        	作者：fmj074@163.com
+        	时间：2015-12-01
+        	描述：弹出查询，添加课程框
+        -->
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">搜索课程</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form-inline">
+								<div class="form-group">
+									<select class="form-control">
+										<option>全局</option>
+										<option>自有</option>
+										<option>模板</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<select class="form-control">
+										<option>全部</option>
+										<option>医疗机构</option>
+										<option>医学形态</option>
+										<option>医疗项目</option>
+										<option>疾病</option>
+										<option>手术</option>
+										<option>药物</option>
+										<option>保健</option>
+										<option>营养品</option>
+										<option>中医名典</option>
+										<option>医学教育</option>
+										<option>继续教育</option>
+										<option>医疗科研</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="exampleInputPassword3">Password</label>
+									<input type="text" class="form-control" id="exampleInputPassword3" placeholder="搜课程">
+								</div>
+								<button class="btn btn-default"> <span class="glyphicon glyphicon-search" data-toggle="tooltip" data-placement="bottom" title="搜索课程"></span>
+								</button>
+								<button class="btn btn-default" data-toggle="modal" data-target="#myModal" id="create-course"> <span class="glyphicon glyphicon-plus" data-toggle="tooltip" data-placement="bottom" title="创建课程"></span>
+								</button>
+							</div>
+							<!--
+                            	作者：fmj074@163.com
+                            	时间：2015-12-01
+                            	描述：课程搜索结果
+                            -->
+							<div class="media course-search-list">
+								<div class="media-left media-middle">
+									<img class="media-object" src="img/clients4/1.png">
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">Middle aligned media</h4> 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111
+								</div>
+
+							</div>
+							<div class="media course-search-list">
+								<div class="media-left media-middle">
+									<img class="media-object" src="img/clients4/1.png">
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">Middle aligned media</h4> 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111
+								</div>
+
+							</div>
+							<div class="media course-search-list">
+								<div class="media-left media-middle">
+									<img class="media-object" src="img/clients4/1.png">
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">Middle aligned media</h4> 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111
+								</div>
+
+							</div>
+							<nav>
+								<ul class="pager">
+									<li><a href="#">上一页</a></li>
+									<li><a href="#">下一页</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="modal-footer">
+
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+							<button type="button" class="btn btn-primary">确定</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+			<script type="text/javascript" src="js/jquery.min.js"></script>
+			<!-- Include all compiled plugins (below), or include individual files as needed -->
+			<script type="text/javascript" src="js/bootstrap.min.js"></script>
+			<script>
+				$(function() {
+					var type = 1;
+					$('[data-toggle="tooltip"]').tooltip();
+					$('#show-left-menu').click(function() {
+						if (type == 1) {
+							$('#left-menu').animate({
+								left: "0px"
+							});
+							$('#course-list-div').animate({
+								left: "150px"
+							});
+							type = 2;
+						} else {
+							$('#left-menu').animate({
+								left: "-201px"
+							});
+							$('#course-list-div').animate({
+								left: "0px"
+							});
+							type = 1;
+						}
+						return false;
+					});
+					$('.course-search-list').click(function() {
+						$('.course-search-list').attr('style', '');
+						$(this).attr('style', 'background-color:#72c02c;');
+					});
+					$('#create-course').click(function() {
+						location.href = "add_course.html"
+					});
+					$('#show-left-menu').click();
+				})
+			</script>
+	</body>
+
+</html>

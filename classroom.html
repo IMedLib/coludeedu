@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>医学云课程</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/classroom.css" rel="stylesheet">
+		<link href="css/jquery-ui.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+	</head>
+
+	<body>
+
+		<!--
+        	作者：fmj074@163.com
+        	时间：2015-11-26
+        	描述：导航开始
+        -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">医学云课程</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<span class="glyphicon glyphicon-align-justify" data-toggle="tooltip" data-placement="bottom" title="展开菜单" id="show-left-menu"></span>
+					<img src="img/logo/logo云课堂-default.png" class="logo">
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<div class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="关键字">
+						</div>
+						<button class="btn btn-default"> <span class="glyphicon glyphicon-search" data-toggle="tooltip" data-placement="bottom" title="搜索课堂"></span>
+						</button>
+						<button id="add-course" class="btn btn-default"> <span class="glyphicon glyphicon-plus" data-toggle="tooltip" data-placement="bottom" title="创建课堂"></span>
+						</button>
+					</div>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="top-info-li-mx">
+							<ol class="breadcrumb">
+								<li><a href="#">首页</a></li>
+								<li><a href="#">云课程</a></li>
+								<li><a href="#">解剖学</a></li>
+								<li class="active">心脏</li>
+
+							</ol>
+						</li>
+						<li class="top-info-li-sm" id="show-lable">
+							<span class=" glyphicon glyphicon-map-marker"></span>
+						</li>
+						<li class="top-info-li-sm">
+							<span class="glyphicon glyphicon-th" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus." id="top-menu"></span>
+						</li>
+
+						<li class="top-info-li-sm">
+							<span class="glyphicon glyphicon-user"></span>
+						</li>
+					</ul>
+
+				</div>
+				<!-- /.navbar-collapse -->
+
+			</div>
+			<!--
+        	作者：fmj074@163.com
+        	时间：2015-11-26
+        	描述：导航结束
+        -->
+			<div id="left-menu">
+				<ul>
+					<li> 医卫星</li>
+					<li> 课程介绍</li>
+					<li> 教学团队</li>
+					<li> 学习成员</li>
+					<hr />
+					<li> 绪论</li>
+					<li> 心脏</li>
+					<li> 消化道</li>
+					<li> 泌尿系统</li>
+					<li> 生殖系统</li>
+
+				</ul>
+			</div>
+			<div style="height: 100%;width: 300px;background-color: #888;position: absolute;left: 100%;z-index: 999;" id="comment-div">
+				<a href="javascripd:;" id="comment-exit">退出</a>
+				<h2>评论</h2>
+			</div>
+			<div style="height: 100%;width: 300px;background-color: #fff;position: absolute;left: 100%;z-index: 999;" id="lable-div">
+				<div class="lable-item-title">课堂标注<span class="glyphicon glyphicon-cog" data-toggle="modal" data-target="#lable-setting"></span></div>
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 课堂标注
+					</label>
+				</div>
+
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 课堂标注组1
+					</label>
+				</div>
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 课堂标注组2
+					</label>
+				</div>
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 课堂标注组3
+					</label>
+				</div>
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 课堂标注组4
+					</label>
+				</div>
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 课堂标注组5
+					</label>
+				</div>
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 其他
+					</label>
+				</div>
+				<div class="lable-item-title">我的标注<span class="glyphicon glyphicon-cog" data-toggle="modal" data-target="#lable-setting"></span></div>
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 我的标注
+					</label>
+				</div>
+
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 我的标注组1
+					</label>
+				</div>
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 我的标注组2
+					</label>
+				</div>
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 我的标注组3
+					</label>
+				</div>
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 我的标注组4
+					</label>
+				</div>
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 我的标注组5
+					</label>
+				</div>
+				<div class="lable-item checkbox">
+					<label>
+						<input type="checkbox"> 其他
+					</label>
+				</div>
+
+				<div id="lable-exit">
+					关闭
+				</div>
+
+			</div>
+
+			<div class="container-fluid " id="course-list-div">
+				<!--
+                	作者：fmj074@163.com
+                	时间：2015-11-26
+                	描述：云板书
+               
+                -->
+				<div class="embed-responsive embed-responsive-16by9" id="ybs">
+					<!--					<iframe class="embed-responsive-item" src="http://121.41.92.56:9000/yunbook.html?path=http://121.41.92.56/YunBook/2015-11-24/201511241631206035061f59b24b069c648128991a98cb9eaccc4/&id=31&w=4096&h=17664&z=7"></iframe>
+-->
+					<iframe class="embed-responsive-item" src="http://121.41.92.56:9000/yunbook.html?path=http://121.41.92.56/YunBook/2015-11-18/201511181124284567888672858fa898b4b4491834a15ffee5906/&id=18&w=4096&h=10789&z=6"></iframe>
+				</div>
+				<!--
+                	作者：fmj074@163.com
+                	时间：2015-11-26
+                	描述：网络课程结束
+                -->
+
+			</div>
+
+			<!-- Modal -->
+			<div class="modal fade" id="lable-setting" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">修改我的标注</h4>
+						</div>
+						<div class="modal-body">
+							<div id="tabs">
+								<ul>
+									<li><a href="#tabs-1">掌握</a></li>
+									<li><a href="#tabs-2">熟悉</a></li>
+									<li><a href="#tabs-3">扩展知识</a></li>
+									<li><a href="#tabs-4">未分组</a></li>
+									<li><a href="#tabs-5">新增组</a></li>
+
+								</ul>
+								<div id="tabs-1">
+									<ul id="sortable1" class="connectedSortable ui-helper-reset">
+										<li class="ui-state-default">标注 11</li>
+										<li class="ui-state-default">标注 12</li>
+										<li class="ui-state-default">标注 13</li>
+										<li class="ui-state-default">标注 14</li>
+										<li class="ui-state-default">标注 15</li>
+									</ul>
+								</div>
+								<div id="tabs-2">
+									<ul id="sortable2" class="connectedSortable ui-helper-reset">
+										<li class="ui-state-default">标注 21</li>
+										<li class="ui-state-default">标注 22</li>
+										<li class="ui-state-default">标注 23</li>
+										<li class="ui-state-default">标注 24</li>
+										<li class="ui-state-default">标注 25</li>
+									</ul>
+								</div>
+								<div id="tabs-3">
+									<ul id="sortable3" class="connectedSortable ui-helper-reset">
+										<li class="ui-state-default">标注 31</li>
+										<li class="ui-state-default">标注 32</li>
+										<li class="ui-state-default">标注 33</li>
+										<li class="ui-state-default">标注 34</li>
+										<li class="ui-state-default">标注 35</li>
+									</ul>
+								</div>
+								<div id="tabs-4">
+									<ul id="sortable4" class="connectedSortable ui-helper-reset">
+										<li class="ui-state-default">标注 41</li>
+										<li class="ui-state-default">标注 42</li>
+										<li class="ui-state-default">标注 43</li>
+										<li class="ui-state-default">标注 44</li>
+										<li class="ui-state-default">标注 45</li>
+									</ul>
+								</div>
+								<div id="tabs-5">
+									<ul id="sortable5" class="connectedSortable ui-helper-reset">
+										<li class="ui-state-default">标注 51</li>
+										<li class="ui-state-default">标注 52</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+							<button type="button" class="btn btn-primary">确定</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+			<script type="text/javascript" src="js/jquery.min.js"></script>
+			<!-- Include all compiled plugins (below), or include individual files as needed -->
+			<script type="text/javascript" src="js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+			<script>
+				$(function() {
+					$("#sortable1, #sortable2, #sortable3, #sortable4, #sortable5").sortable().disableSelection();
+					var $tabs = $("#tabs").tabs();
+					var $tab_items = $("ul:first li", $tabs).droppable({
+						accept: ".connectedSortable li",
+						hoverClass: "ui-state-hover",
+						drop: function(event, ui) {
+							var $item = $(this);
+							var $list = $($item.find("a").attr("href"))
+								.find(".connectedSortable");
+							ui.draggable.hide("slow", function() {
+								$tabs.tabs("option", "active", $tab_items.index($item));
+								$(this).appendTo($list).show("slow");
+							});
+						}
+					});
+				});
+				$(function() {
+					var type = 1;
+					$('[data-toggle="tooltip"]').tooltip();
+					$('#show-left-menu').click(function() {
+						if (type == 1) {
+							$('#left-menu').animate({
+								left: "0px"
+							});
+							$('#course-list-div').animate({
+								left: "185px"
+							});
+							type = 2;
+						} else {
+							$('#left-menu').animate({
+								left: "-201px"
+							});
+							$('#course-list-div').animate({
+								left: "0px"
+							});
+							type = 1;
+						}
+						return false;
+					});
+					$('#top-menu').popover({
+						html: true,
+						template: '<div class="popover" id="top-menu-popover" role="tooltip" style="width:280px;height:310px;"><div class="arrow"></div>' +
+							'<ul><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul></div>'
+					});
+					$("body").delegate(".popover li", "click", function() {
+						$('#course-list-div').animate({
+							left: "-90px"
+						});
+						$('#ybs').animate({
+							width: "90%"
+						});
+						$('#comment-div').animate({
+							left: (document.body.clientWidth - 300) + 'px'
+						});
+						$('#top-menu').click();
+					});
+					$('#show-lable').click(function() {
+						$('#course-list-div').animate({
+							left: "-90px"
+						});
+						$('#ybs').animate({
+							width: "90%"
+						});
+						$('#lable-div').animate({
+							left: (document.body.clientWidth - 300) + 'px'
+						});
+					});
+					$('#comment-exit').click(function() {
+						$('#course-list-div').animate({
+							left: "0px"
+						});
+						$('#ybs').animate({
+							width: "100%"
+						});
+						$('#comment-div').animate({
+							left: (document.body.clientWidth) + 'px'
+						});
+					});
+					$('#lable-exit').click(function() {
+						$('#course-list-div').animate({
+							left: "0px"
+						});
+						$('#ybs').animate({
+							width: "100%"
+						});
+						$('#lable-div').animate({
+							left: (document.body.clientWidth) + 'px'
+						});
+					});
+					$('#add-course').click(function() {
+						location.href = "add_course.html"
+					});
+				})
+			</script>
+	</body>
+
+</html>

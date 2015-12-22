@@ -1,0 +1,257 @@
+﻿<!--
+	作者：fmj074@163.com
+	时间：2015-12-01
+	描述：新建课程
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>医学云课程--添加课程</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/add_course.css" rel="stylesheet">
+		<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+	</head>
+
+	<body >
+
+		<!--
+        	作者：fmj074@163.com
+        	时间：2015-11-26
+        	描述：导航开始
+        -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">医学云课程</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<span class="glyphicon glyphicon-align-justify" data-toggle="tooltip" data-placement="bottom" title="展开菜单" id="show-left-menu"></span>
+					<img src="img/logo/logo资源加-default.png" class="logo">
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<div class="navbar-form navbar-left" role="search">
+						<button class="btn btn-default" data-toggle="modal" data-target="#myModal"> <span class="glyphicon glyphicon-plus" data-toggle="tooltip" data-placement="bottom" title="创建课程"></span>
+						</button>
+					</div>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="top-info-li-mx">
+							<ol class="breadcrumb">
+								<li><a href="#">首页</a></li>
+								<li><a href="#">资源</a></li>
+								<li class="active">新增课程</li>
+							</ol>
+						</li>
+
+						<li class="top-info-li-sm">
+							<span class="glyphicon glyphicon-user"></span>
+						</li>
+
+					</ul>
+
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!--
+	        	作者：fmj074@163.com
+	        	时间：2015-11-26
+	        	描述：导航结束
+	        -->
+
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div id="map_canvas" style="width:100%;height:200px;">
+
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-2" id="img-list">
+						<img src="img/clients4/img12.jpg" />
+						<div class="img-title">课堂</div>
+
+					</div>
+					<div class="col-xs-8" id="add-course-info">
+						<form class="form-horizontal">
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-2 control-label">名称</label>
+								<div class="col-sm-10">
+									<input type="email" class="form-control" id="inputEmail3" placeholder="课程名称">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPassword3" class="col-sm-2 control-label">资源</label>
+								<div class="col-sm-10">
+									<input type="file" id="exampleInputFile">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPassword3" class="col-sm-2 control-label">摘要</label>
+								<div class="col-sm-10">
+									<textarea class="form-control" rows="3"></textarea>
+								</div>
+							</div>
+
+						</form>
+						<div style="width: 100%;height: 100px;">
+							<h1>各种资源附加内容</h1>
+
+						</div>
+
+						<div style="width: 100%;">
+							<div class="btn-group" role="group" style="float: right;margin-top: 10px;;">
+								<button type="button" class="btn btn-default">保存</button>
+								<button type="button" class="btn btn-default">预览</button>
+								<button type="button" class="btn btn-default">发布</button>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-xs-2" id="right-but-course">
+						<button type="button" class="btn btn-info" data-toggle="modal" data-target="#add-ybs"><span class="glyphicon glyphicon-search"></span> 机构</button>
+						<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> 专家</button>
+						<button type="button" class="btn btn-info" data-toggle="modal" data-target="#add-ybs"><span class="glyphicon glyphicon-search"></span> 云板书</button>
+						<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> 视频</button>
+						<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> 音频</button>
+						<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> 医学词条</button>
+						<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> 医学资源</button>
+						<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> 其他</button>
+					</div>
+				</div>
+			</div>
+
+			<!--
+        	作者：fmj074@163.com
+        	时间：2015-12-01
+        	描述：弹出查询，寻找课堂
+        -->
+
+			<!-- Modal -->
+			<div class="modal fade" id="add-ybs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">添加云板书</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form-inline">
+								<div class="form-group">
+									<select class="form-control">
+										<option>全局</option>
+										<option>自有</option>
+										<option>模板</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<select class="form-control">
+										<option>全部</option>
+										<option>医疗机构</option>
+										<option>医学形态</option>
+										<option>医疗项目</option>
+										<option>疾病</option>
+										<option>手术</option>
+										<option>药物</option>
+										<option>保健</option>
+										<option>营养品</option>
+										<option>中医名典</option>
+										<option>医学教育</option>
+										<option>继续教育</option>
+										<option>医疗科研</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="exampleInputPassword3">Password</label>
+									<input type="text" class="form-control" id="exampleInputPassword3" placeholder="搜课程">
+								</div>
+								<button class="btn btn-default"> <span class="glyphicon glyphicon-search" data-toggle="tooltip" data-placement="bottom" title="搜索课程"></span>
+								</button>
+								<button class="btn btn-default" id="create-res"> <span class="glyphicon glyphicon-plus" data-toggle="tooltip" data-placement="bottom" title="创建课程"></span>
+								</button>
+							</div>
+							<!--
+                            	作者：fmj074@163.com
+                            	时间：2015-12-01
+                            	描述：课程搜索结果
+                            -->
+							<div class="media course-search-list">
+								<div class="media-left media-middle">
+									<img class="media-object" src="img/clients4/1.png">
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">Middle aligned media</h4> 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111
+								</div>
+
+							</div>
+							<div class="media course-search-list">
+								<div class="media-left media-middle">
+									<img class="media-object" src="img/clients4/1.png">
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">Middle aligned media</h4> 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111
+								</div>
+
+							</div>
+							<div class="media course-search-list">
+								<div class="media-left media-middle">
+									<img class="media-object" src="img/clients4/1.png">
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">Middle aligned media</h4> 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111 课程111课程111课程111课程111课程111课程111
+								</div>
+
+							</div>
+							<nav>
+								<ul class="pager">
+									<li><a href="#">上一页</a></li>
+									<li><a href="#">下一页</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="modal-footer">
+
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+							<button type="button" class="btn btn-primary">确定</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+			<script type="text/javascript" src="js/jquery.min.js"></script>
+			<!-- Include all compiled plugins (below), or include individual files as needed -->
+			<script type="text/javascript" src="js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+			<script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+			<script type="text/javascript" src="mapfiles/mapapi.js"></script>
+			<script type="text/javascript" src="js/map.js"></script>
+
+			<script>
+				$('#create-res').click(function() {
+					location.href = 'res.html'
+				})
+			</script>
+	</body>
+
+</html>

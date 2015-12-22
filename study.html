@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>医学云课程</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/study.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+	</head>
+
+	<body>
+
+		<div id="left-menu" style="border:1px solid #72c02c;"><h2>左侧菜单</h2></div>
+		<div id="comment-div" style="border:1px solid #72c08c;"><h2>评论</h2></div>
+		<div class="container-fluid">
+			<div class="row">
+				<!--
+		        	作者：fmj074@163.com
+		        	时间：2015-11-27
+		        	描述：顶部搜索
+		        -->
+				<div class="col-md-4 col-sm-6">
+					<div class="input-group" style="margin: 10px;;">
+						<div class="input-group-addon" id="show-left-menu" data-toggle="tooltip" data-placement="bottom" title="菜单"><span class="glyphicon glyphicon-th"></span></div>
+						<input type="text" class="form-control" id="exampleInputAmount" placeholder="搜索">
+						<div class="input-group-addon" data-toggle="tooltip" data-placement="bottom" title="搜索"><span class="glyphicon glyphicon-search"></span></div>
+					</div>
+				</div>
+				<div class="col-md-1 col-sm-1 col-md-offset-7 col-sm-offset-5 hidden-xs" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus." id="top-menu">
+					<span class="glyphicon glyphicon-th" style="margin:10px;padding:10px;"></span>
+				</div>
+
+				<!--
+                	作者：fmj074@163.com
+                	时间：2015-11-27
+                	描述：顶部搜索结束
+                -->
+			</div>
+
+		</div>
+		<!--
+        	作者：fmj074@163.com
+        	时间：2015-11-27
+        	描述： style="height: 100%;background-color: #72c02c;"
+        -->
+		<div class="container" style="height: 90%;border: 1px solid #72c02c;">
+			<div class="row" id="comment-info">
+				<div class="col-xs-1 col-xs-offset-7"><span class="glyphicon glyphicon-heart" data-toggle="tooltip" data-placement="bottom" title="收藏"></span></div>
+				<div class="col-xs-1"><span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" data-placement="bottom" title="观看"></span></div>
+				<div class="col-xs-1"><span class="glyphicon glyphicon-share" data-toggle="tooltip" data-placement="bottom" title="转发"></span></div>
+				<div class="col-xs-1" id="show-comment-div"><span class="glyphicon glyphicon-option-horizontal" data-toggle="tooltip" data-placement="bottom" title="评论"></span></div>
+			</div>
+			<h1>云板书</h1>
+
+		</div>
+
+		<div class="popover" role="tooltip" style="height:500px;width:300px">
+			<ul>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+			</ul>
+		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$('#show-left-menu').click(function() {
+				$('#left-menu').animate({
+					left: "0px"
+				});
+				return false;
+			});
+			$('.container-fluid, .container').click(function() {
+				$('#left-menu').animate({
+					left: "-300px"
+				});
+				$('#comment-div').animate({
+					left: "100%"
+				});
+				$('#top-menu').popover('hide');
+				return false;
+			});
+			$(function() {
+				$('[data-toggle="tooltip"]').tooltip();
+				$('#top-menu').popover({
+					html: true,
+					template: '<div class="popover" id="top-menu-popover" role="tooltip" style="width:280px;height:310px;"><div class="arrow"></div>' +
+						'<ul><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li><li>1</li></ul></div>'
+				});
+				$('#top-menu').click(function() {
+					return false;
+				});
+				$('#show-comment-div').click(function(){
+					$('#comment-div').animate({
+						left: (document.body.clientWidth-300)+'px'
+					});
+					return false;
+				});
+			})
+		</script>
+	</body>
+
+</html>
