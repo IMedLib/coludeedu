@@ -1,1 +1,6 @@
+body,html{height: 100%;}
 .left-title{width: 100%;height: 30px;color: #fff;background-color: #888;line-height: 30px;text-align: center;}
+.summary .title{font-size: 20px;font-weight: 500;width: 50%;overflow: hidden;float: left;height: 30px;line-height: 30px;}
+.summary .title2{font-size: 20px;font-weight: 500;width: 100%;overflow: hidden;height: 30px;line-height: 30px;}
+
+.summary .teacher{width: 50%;overflow: hidden;height: 30px;line-height: 30px;;}
