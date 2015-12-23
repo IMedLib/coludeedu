@@ -1,0 +1,106 @@
+	body,
+	html {
+		height: 100%;
+	}
+	
+	.container {
+		height: 80%;
+	}
+	
+	.step-item {
+		background-color: #aaa;
+		height: 34px;
+		line-height: 34px;
+		color: #fff;
+	}
+	
+	.step-item-finish {
+		background-color: #72c02c;
+	}
+	
+	.step-item-ing .step-right {
+		border: 17px solid #a2d04c;
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		width: 0px;
+		height: 0px;
+		float: right;
+		position: absolute;
+		display: inline-block;
+		z-index: 11;
+		right: -25px;
+	}
+	
+	.step-item-ing {
+		background-color: #a2d04c;
+	}
+	
+	.step-index {
+		color: #72c02c;
+		background-color: #fff;
+		border-radius: 25px;
+		width: 25px;
+		height: 25px;
+		margin-top: 5px;
+		text-align: center;
+		line-height: 25px;
+		float: left;
+		margin-left: 30px;
+		;
+	}
+	
+	.step-title {
+		margin-left: 35px;
+		width: 50%;
+		float: left;
+	}
+	
+	.step-right {
+		border: 17px solid #72c02c;
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		width: 0px;
+		height: 0px;
+		float: right;
+		position: absolute;
+		display: inline-block;
+		z-index: 11;
+		right: -25px;
+	}
+	
+	.step-right2 {
+		border: 17px solid #fff;
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		width: 0px;
+		height: 0px;
+		float: right;
+		position: absolute;
+		display: inline-block;
+		right: -32px;
+		z-index: 10;
+	}
+	
+	.step-right-bg {
+		width: 6px;
+		height: 34px;
+		position: absolute;
+		display: inline-block;
+		background-color: #fff;
+		right: 2px;
+		z-index: 8;
+	}
+	
+	.course-content {
+		height: 100%;
+		margin-top: 20px;
+		;
+	}
+	
+#class li{display: inline-block;height: 40px;line-height: 40px;width: 100%;font-size: 18px;}
+#class li:hover{background-color: #72C02C;color: #fff;text-indent: 10px;border-radius:5px ;}
+.nopadding{padding: 0px !important;}
+.form-group{height: 40px;;}
