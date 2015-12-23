@@ -1,7 +1,8 @@
 ﻿<!--
 	作者：fmj074@163.com
 	时间：2015-12-01
-	描述：新建课程
+	描述：添加资源
+	
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -11,13 +12,119 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-		<title>医学云课程--添加课程</title>
+		<title>医学云课程--添加资源</title>
 
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/common.css" rel="stylesheet">
+		<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+		<link href="css/summernote.css" rel="stylesheet">
+		<link href="assets/Font-Awesome/css/font-awesome.css" rel="stylesheet">
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<style>
+			body,
+			html {
+				height: 100%;
+			}
+			
+			.container {
+				height: 80%;
+			}
+			
+			.step-item {
+				background-color: #aaa;
+				height: 34px;
+				line-height: 34px;
+				color: #fff;
+			}
+			
+			.step-item-finish {
+				background-color: #72c02c;
+			}
+			
+			.step-item-ing .step-right {
+				border: 17px solid #a2d04c;
+				border-top-color: transparent;
+				border-right-color: transparent;
+				border-bottom-color: transparent;
+				width: 0px;
+				height: 0px;
+				float: right;
+				position: absolute;
+				display: inline-block;
+				z-index: 11;
+				right: -25px;
+			}
+			
+			.step-item-ing {
+				background-color: #a2d04c;
+			}
+			
+			.step-index {
+				color: #72c02c;
+				background-color: #fff;
+				border-radius: 25px;
+				width: 25px;
+				height: 25px;
+				margin-top: 5px;
+				text-align: center;
+				line-height: 25px;
+				float: left;
+				margin-left: 30px;
+				;
+			}
+			
+			.step-title {
+				margin-left: 35px;
+				width: 50%;
+				float: left;
+			}
+			
+			.step-right {
+				border: 17px solid #72c02c;
+				border-top-color: transparent;
+				border-right-color: transparent;
+				border-bottom-color: transparent;
+				width: 0px;
+				height: 0px;
+				float: right;
+				position: absolute;
+				display: inline-block;
+				z-index: 11;
+				right: -25px;
+			}
+			
+			.step-right2 {
+				border: 17px solid #fff;
+				border-top-color: transparent;
+				border-right-color: transparent;
+				border-bottom-color: transparent;
+				width: 0px;
+				height: 0px;
+				float: right;
+				position: absolute;
+				display: inline-block;
+				right: -32px;
+				z-index: 10;
+			}
+			
+			.step-right-bg {
+				width: 6px;
+				height: 34px;
+				position: absolute;
+				display: inline-block;
+				background-color: #fff;
+				right: 2px;
+				z-index: 8;
+			}
+			
+			.course-content {
+				height: 100%;
+				margin-top: 20px;
+				;
+			}
+		</style>
+
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
@@ -42,8 +149,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<span class="glyphicon glyphicon-align-justify" data-toggle="tooltip" data-placement="bottom" title="展开菜单" id="show-left-menu"></span>
-					<img src="img/logo/logo资源加-default.png" class="logo">
+					<img src="img/logo/logo云课程加-default.png" class="logo">
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -57,19 +163,15 @@
 						<li class="top-info-li-mx">
 							<ol class="breadcrumb">
 								<li><a href="#">首页</a></li>
-								<li><a href="#">资源</a></li>
+								<li><a href="#">云课程</a></li>
 								<li class="active">新增课程</li>
 							</ol>
 						</li>
-
 						<li class="top-info-li-sm">
 							<span class="glyphicon glyphicon-user"></span>
 						</li>
-
 					</ul>
-
 				</div>
-				<!-- /.navbar-collapse -->
 			</div>
 		</nav>
 		<!--
@@ -79,37 +181,108 @@
 	        -->
 
 		<div class="container">
-			<div class="col-sm-6 col-sm-offset-3 form-horizontal">
-				<div class="form-group">
-					<label for="name" class="col-sm-2 control-label">名称</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="name" placeholder="资源名称">
+			<!--
+            	作者：fmj074@163.com
+            	时间：2015-12-22
+            	描述：步骤导航
+            -->
+			<div class="row" id="step">
+				<div class="col-sm-4 step-item step-item-finish col-sm-offset-2">
+					<div class="step-index"><span class="glyphicon glyphicon-ok"></span></div>
+					<div class="step-title">第一步:选择坐标</div>
+					<div class="step-right"></div>
+					<div class="step-right2"></div>
+					<div class="step-right-bg"></div>
+
+				</div>
+				<div class="col-sm-4 step-item">
+					<div class="step-index">2</div>
+					<div class="step-title">上传文件</div>
+				</div>
+			</div>
+
+			<!--
+            	作者：fmj074@163.com
+            	时间：2015-12-22
+            	描述：步骤内容
+            -->
+			<div class="row" style="height: 100%;">
+
+				<div class="col-sm-12 course-content">
+					<div class="" id="ybs">
+						<div id="tool-button">
+							<ul>
+								<li class="menu">移动</li>
+								<li class="menu">标注</li>
+								<li class="menu">涂鸦</li>
+								<li class="menu">区域</li>
+								<li class="menu">直线</li>
+								<li class="menu">矩形</li>
+								<li>
+									<select id="color">
+										<option value="rgba(255, 0, 0, 0.5)">红</option>
+										<option value="rgba(0, 255, 0, 0.5)">绿</option>
+										<option value="rgba(0, 0, 255, 0.5)">蓝</option>
+									</select>
+								</li>
+								<li>
+									<select id="strokeWeight">
+										<option value="2">细</option>
+										<option value="8">中</option>
+										<option value="15">粗</option>
+										<option value="25">极粗</option>
+									</select>
+								</li>
+
+							</ul>
+
+						</div>
+						<div id="map_canvas" style="width: 100%; ">
+						</div>
+						<nav>
+							<ul class="pager">
+								<li><a href="javascricp:;" class="to-step2">下一步</a></li>
+							</ul>
+						</nav>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="name" class="col-sm-2 control-label">资源类型</label>
-					<div class="col-sm-10">
-						<select class="form-control">
-							<option>云板书</option>
-							<option>视频</option>
-							<option>音频</option>
-							<option>图片</option>
-						</select>
+
+				<div class="col-sm-12  course-content" style="display: none;">
+					<div class="col-sm-6 col-sm-offset-3 form-horizontal">
+						<div class="form-group">
+							<label for="name" class="col-sm-2 control-label">名称</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="name" placeholder="资源名称">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="name" class="col-sm-2 control-label">资源类型</label>
+							<div class="col-sm-10">
+								<select class="form-control">
+									<option>云板书</option>
+									<option>视频</option>
+									<option>音频</option>
+									<option>图片</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="name" class="col-sm-2 control-label">上传文件</label>
+							<div class="col-sm-10">
+								<input type="file" id="exampleInputFile">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="name" class="col-sm-2 control-label">摘要</label>
+							<div class="col-sm-10">
+								<textarea class="form-control" rows="3"></textarea>
+							</div>
+						</div>
+						<button class="btn btn-default" style="margin-left: 50%;">提交</button>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="name" class="col-sm-2 control-label">上传文件</label>
-					<div class="col-sm-10">
-						<input type="file" id="exampleInputFile">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="name" class="col-sm-2 control-label">摘要</label>
-					<div class="col-sm-10">
-						<textarea class="form-control" rows="3"></textarea>
-					</div>
-				</div>
-				<button class="btn btn-default" style="margin-left: 50%;">提交</button>
+
+				
 			</div>
 
 		</div>
@@ -118,6 +291,48 @@
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+		<script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script type="text/javascript" src="js/MapLabel-Compiled.js"></script>
+		<script type="text/javascript" src="js/mapapi.js"></script>
+		<script type="text/javascript" src="mapfiles/api-3/16/2/drawing.js"></script>
+		<script type="text/javascript" src="mapfiles/api-3/16/2/poly.js"></script>
+
+		<script type="text/javascript" src="js/map.js"></script>
+		<script type="text/javascript" src="js/summernote.min.js"></script>
+		<script type="text/javascript" src="js/summernote-zh-CN.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.date').datetimepicker({
+					language: 'zh-CN',
+					format: 'yyyy-mm-dd hh:ii',
+					pickerPosition: 'bottom-right',
+					weekStart: 1,
+					todayBtn: 1,
+					autoclose: 1,
+					todayHighlight: 1,
+					startView: 2,
+					forceParse: 0,
+					showMeridian: 1
+				});
+				$('.step-item').click(function() {
+					var index = $('.step-item').index($(this));
+					$('.course-content').hide();
+					$('.course-content:eq(' + index + ')').fadeIn();
+				});
+				$('.to-step1').click(function() {
+					$('.step-item:eq(0)').click();
+				});
+				$('.to-step2').click(function() {
+					$('.step-item:eq(1)').click();
+				});
+				$('.to-step3').click(function() {
+					$('.step-item:eq(2)').click();
+				});
+				$('#map_canvas').attr('style', 'height:' + 0.7 * document.body.clientHeight + "px")
+				google.maps.event.addDomListener(window, 'load', initialize);
+			})
+		</script>
 
 	</body>
 
